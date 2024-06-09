@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apha Library</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">
+        </h2>
+        <div class="form-group">
+         </form>
+          <label for="student-number">student uniqueid:- </label>
+          <input type="text" id="student-number" required /><br>
+          <button onclick="showStudentInfo()" class="Serch">Serch</button>
+         </form>
+        </div>
+    
+        <div class="result-tab" id="student-info">
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Student rigstraction</h2>
+          <p id="student-name"></p>
+          <p id="student-test"></p>
+          <p id="student-class"></p>
+          <p id="student-subject"></p>
+          <p id="student-marks"></p>
+          <p id="student-info"></p>
+        </div>
+      </div>
+
+      <script>
+    // JavaScript code
+    function showStudentInfo() {
+      var studentNumber = document.getElementById('student-number').value;
+      var studentInfo = getStudentInfo(studentNumber);
+
+      if (studentInfo) {
+        document.getElementById('student-name').textContent = "Name: " + studentInfo.name;
+        document.getElementById('student-test').textContent = "Amout payed: " + studentInfo.test;
+        document.getElementById('student-class').textContent = "Amount remain to pay: " + studentInfo.class;
+        document.getElementById('student-subject').textContent = "Number of sift he/she bought: " + studentInfo.subject;
+        document.getElementById('student-marks').textContent = "pasword: " + studentInfo.marks;
+        document.getElementById('student-info').style.display = 'block';
+      } else {
+        alert("we not able to find result");
+      }
+    }
+
+    // Simulated student data
+    function getStudentInfo(studentNumber) {
+      var studentData = {
+        
+
+        "Ujjwal kumar-8-IMO-1": {
+          name: "Ujjwal kuamr",
+          test: "299",
+          class: "100",
+          subject: "1 of 4 hours" ,
+          marks: "uk12345678@"
+        }
+    }
+    return studentData[studentNumber];
+    }
+</script>
+</body>
+</html>
